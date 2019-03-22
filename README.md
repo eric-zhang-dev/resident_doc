@@ -93,7 +93,6 @@ appointedProvince				|省			|省编码+省
 appointedCity					|市		    |市编码+市
 appointedDistrict			   |区			|区编码+区
 appointedAddress			|详细地址			|&nbsp;
-
 contactName					|代办人姓名		|&nbsp;
 contactPhone						|代办人电话			|&nbsp;
 contactIdcard					|代办人身份证		|&nbsp;
