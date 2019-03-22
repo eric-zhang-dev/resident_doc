@@ -92,13 +92,13 @@ receiveType					|待遇申办类型		|1职工个人一档 2职工个人二档3�
 appointedProvince				|省			|省编码+省
 appointedCity					|市		    |市编码+市
 appointedDistrict			   |区			|区编码+区
-appointedAddress			|详细地址			|
+appointedAddress			|详细地址			|&nbsp;
 
-contactName					|代办人姓名		|
-contactPhone						|代办人电话			|
-contactIdcard					|代办人身份证		|
+contactName					|代办人姓名		|&nbsp;
+contactPhone						|代办人电话			|&nbsp;
+contactIdcard					|代办人身份证		|&nbsp;
 relationshipInsUser				|与参保人关系			|0本人 1子女，2父母，3配偶，4（表）兄弟姐妹，5朋友 6其它
-isReAssess					|申请类型		|
+isReAssess					|申请类型		|&nbsp;
 receiveType						|待遇申办类型			|5-->居家上门护理，4-->机构护理，6-->居家自主护理，
 wantOrgName					|所属区县		|大渡口区,巴南区,垫江县,石柱土家族自治县
 wantOrg						|机构地址			|护理机构编码
