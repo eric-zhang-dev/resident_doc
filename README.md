@@ -2,12 +2,11 @@
 
 ## 1. 接口定义
 
-### 1.1 我的评估
-- **接口说明：** 参保人检验
+###  参保人检验
 - **接口地址：** /ltcins-intact-client-api/client/loadIns
 - **请求方式：** POST
 
-#### 1.1.1 请求参数
+#### 请求参数
   
 参数名称						|描述			|备注
 :----						|:---			    |:---
@@ -15,9 +14,7 @@ idcard						|身份证				|&nbsp;
 
 
 
-#### 1.1.2 返回结果
-
-示例：
+####  返回结果
 
 ```
 {
@@ -52,73 +49,66 @@ idcard						|身份证				|&nbsp;
 	"applyType": 0  申请类型
 }
 ```
+###  选择护理机构
+- **接口地址：** /ltcins-intact-client-api/client/loadWantOrg(中文需编码)
+- **请求方式：** POST
+
+#### 请求参数
+
+参数名称						|描述			|备注
+:----						|:---			    |:---
+receiveType					|待遇申办类型		|5-->居家上门护理，4-->机构护理，6-->居家自主护理，
+wantDis						|机构地址				|大渡口区,巴南区,垫江县,石柱土家族自治县
 
 
-
-### 2.2 获取登录用户信息
-- **接口说明：** 获取登录用户信息
-- **接口地址：** /account/profile
-
-#### 2.1.1 请求参数
-  
-参数名称						|类型		|出现要求	|描述  
-:----						|:---		|:------	|:---	
-Header						|&nbsp;		|R			|请求报文头
-&emsp;Token					|string		|R			|用户登录后token，没有登录则为空字符串
-&emsp;Version				|string		|R			|接口版本号
-&emsp;SystemId				|int		|R			|机构号，请求的系统Id
-&emsp;Timestamp				|long		|R			|当前UNIX时间戳
-Body						|&nbsp;		|R			|&nbsp;
-
-
-
-请求示例：
+####  返回结果
 
 ```
-
 {
-    "Header":{
-        "Token":"CA64A439E7C344B0BA7F5C825E17C7AB",
-        "Version":"3.2.0",
-        "SystemId":100,
-        "Timestamp":1502870664
-    },
-    "Body":null
+	"errorCode": 0,
+	"errorMsg": null,
+	"dataList": [{
+		"orgName": "石柱县居家护理机构",
+		"orgId": 1110
+	}]
 }
-
 ```
 
 
-#### 2.1.2 返回结果
 
-参数名称						|类型		|出现要求	|描述  
-:----						|:---		|:------	|:---	
-Code						|int		|R			|响应码，代码定义请见“附录A 响应吗说明”
-Msg							|string		|R			|&nbsp;
-Data						|object		|R			|&nbsp;
-&emsp;UserId				|string		|R			|用户Id
-&emsp;RealName				|string		|R			|姓名
-&emsp;ImageUrl				|string		|R			|头像
-&emsp;Score					|int		|R			|积分
-&emsp;Nickname				|string		|R			|昵称
-&emsp;Sex					|int		|R			|性别：0-未知、1-男、2-女
-&emsp;Title					|string		|R			|头衔
+###  申请评估提交
+- **接口地址：** /ltcins-intact-client-api/client/submitOrder
+- **请求方式：** POST
+
+#### 请求参数
+
+参数名称						|描述			|备注
+:----						|:---			    |:---
+fullname					|姓名		    |&nbsp;
+idcard						|身份证			  |&nbsp;
+sex					        |性别		      |&nbsp;
+insType						|参保状态			|1-正常，2-未参保
+receiveType					|待遇申办类型		|1职工个人一档 2职工个人二档3单位参保
+appointedProvince				|省			|省编码+省
+appointedCity					|市		    |市编码+市
+appointedDistrict			   |区			|区编码+区
+appointedAddress			|详细地址			|
+
+contactName					|代办人姓名		|
+contactPhone						|代办人电话			|
+contactIdcard					|代办人身份证		|
+relationshipInsUser				|与参保人关系			|0本人 1子女，2父母，3配偶，4（表）兄弟姐妹，5朋友 6其它
+isReAssess					|申请类型		|
+receiveType						|待遇申办类型			|5-->居家上门护理，4-->机构护理，6-->居家自主护理，
+wantOrgName					|所属区县		|大渡口区,巴南区,垫江县,石柱土家族自治县
+wantOrg						|机构地址			|护理机构编码
 
 
-示例：
+####  返回结果
 
 ```
 {
-    "Code":200,
-    "Msg":"处理成功",
-    "Data":{
-        "UserId":"7D916C7283434955A235C17DD9B71C64",
-        "RealName":"张三",
-        "ImageUrl":"https://img.xx.net/afdicew8751.png",
-        "Score":4732,
-        "Nickname":"张冠李戴",
-        "Sex":1,
-        "Title":"侠客Lv4"
-    }
+	"errorCode": 0,
+	"errorMsg": null,
 }
 ```
