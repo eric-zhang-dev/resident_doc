@@ -87,8 +87,8 @@ wantDis						|机构地址				|大渡口区,巴南区,垫江县,石柱土家族�
 fullname					|姓名		    |&nbsp;
 idcard						|身份证			  |&nbsp;
 sex					        |性别		      |&nbsp;
-insType						|参保状态			|1-正常，2-未参保
-receiveType					|待遇申办类型		|1职工个人一档 2职工个人二档3单位参保
+insStatus						|参保状态			|1-正常，2-未参保
+insType					|待遇申办类型		|1职工个人一档 2职工个人二档3单位参保
 appointedProvince				|省			|省编码+省
 appointedCity					|市		    |市编码+市
 appointedDistrict			   |区			|区编码+区
