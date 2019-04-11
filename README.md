@@ -428,3 +428,47 @@ orderNo					    |订单号		        |&nbsp;
     "serviceCount": 1
 }
 ```
+###  根据评估工单号查询具体的护理信息
+- **接口地址：** /ltcins-intact-client-api/client/querySuccessOrderInfoByOrderNo
+- **请求方式：** POST
+
+#### 请求参数
+  
+参数名称						|描述			|备注
+:----						|:---			    |:---
+orderNo					    |订单号		        |&nbsp;
+
+
+####  返回结果
+```
+{
+    "errorCode": 0,
+    "errorMsg": null,
+    "orderNo": "100201904040964",
+    "fullname": "任命",
+    "idcard": "510213195709192843",
+    "sex": F,
+    "relationshipInsUser": 7,
+    "assessedLevel": 3,
+    "serviceInDate": "2019-04-04",
+    "distributeOrgId": 1130,
+    "distributeOrgName": "垫江县居家护理专用01",
+    "distributeOrgClass": 5,
+    "score": 5,
+    "planId": "201904041438489284",
+    "nursingServicePlanItemInfoList": [
+        {
+            "frequency": "2日1次",
+            "serviceId": 1121,
+            "serviceName": "洗发"
+        },
+        {
+            "frequency": "1日1次",
+            "serviceId": 1125,
+            "serviceName": "精神慰藉"
+        }
+    ],
+    "serviceDuration": 1,
+    "serviceCount": 1
+}
+```
