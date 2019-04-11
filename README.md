@@ -428,8 +428,8 @@ orderNo					    |订单号		        |&nbsp;
     "serviceCount": 1
 }
 ```
-###  根据评估工单号查询具体的护理信息
-- **接口地址：** /ltcins-intact-client-api/client/querySuccessOrderInfoByOrderNo
+###  根据工单号查询工单详情(居民端app调用)
+- **接口地址：** /ltcins-intact-client-api/authed/order_detail.htm
 - **请求方式：** POST
 
 #### 请求参数
@@ -442,33 +442,35 @@ orderNo					    |订单号		        |&nbsp;
 ####  返回结果
 ```
 {
-    "errorCode": 0,
-    "errorMsg": null,
-    "orderNo": "100201904040964",
-    "fullname": "任命",
-    "idcard": "510213195709192843",
-    "sex": F,
-    "relationshipInsUser": 7,
-    "assessedLevel": 3,
-    "serviceInDate": "2019-04-04",
-    "distributeOrgId": 1130,
-    "distributeOrgName": "垫江县居家护理专用01",
-    "distributeOrgClass": 5,
-    "score": 5,
-    "planId": "201904041438489284",
-    "nursingServicePlanItemInfoList": [
-        {
-            "frequency": "2日1次",
-            "serviceId": 1121,
-            "serviceName": "洗发"
-        },
-        {
-            "frequency": "1日1次",
-            "serviceId": 1125,
-            "serviceName": "精神慰藉"
-        }
-    ],
-    "serviceDuration": 1,
-    "serviceCount": 1
+  "errorCode": 0,
+  "errorMsg": null,	
+  "fullName": "肖长华",	/**参保人姓名*/
+  "sex": "2",	/**参保人性别*/
+  "birthDay": "",	/**参保人出生年月*/
+  "insuredState": 1,	/** 参保状态(1-正常，2-未参保) **/
+  "insType": 3,		/** 参保类型(1个人一档 2个人二档 3单位参保) **/
+  "newAbode": null,	/**现居地*/
+  "detailed": "重庆市重庆市大渡口区湖榕路77号",	/**详细地址*/
+  "idCardPics": [],	/**身份证图片地址*/
+  "contactName": "覃又香", /**代办人姓名*/
+  "contactPhone": "15590908877",	/**代办人联系电话*/
+  "contactIdCard": "350128199208258936",	/**代办人身份证号码*/
+  "relationshipInsUser": 1,	/**和参保人的关系(0本人 1子女，2父母，3配偶，4（表）兄弟姐妹，5朋友 6其它)**/
+  "assessType": 1,	/**申请类型0初评,1复评*/
+  "receiveType": 4,	/** 待遇申办类型(1居家上门护理 2机构护理 3居家自主护理（注：现金补助）) **/
+  "wantOrgName": "大渡口区护理机构01",	/**申请意向护理机构*/
+  "orderStatus": 19,	/** 工单状态*/
+  "orderNo": "100201904032203", 	/**工单编号*/
+  "createdTime": "2019-04-03 10:42:03", /**申请时间*/
+  "pics": [],	/**图片url地址*/
+  "payType": null, /**支付方式*/
+  "payCost": null,	/**预评估费用*/
+  "payTime": null,	/**支付时间*/
+  "payNo": null,	/**支付流水号*/
+  "appointedTime": "2019-04-04 09:58:48",	/**预约评估时间*/
+  "appointedAssessAddress": "湖榕路77号",	/**评估地址*/
+  "fullnameA": "评估专家01",	/**评估员a*/
+  "fullnameB": "评估员B03", 	/**评估员b*/
+  "idcard": "510213195303232825"  /**参保人身份证号码*/
 }
 ```
