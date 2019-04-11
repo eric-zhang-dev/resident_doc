@@ -4,7 +4,7 @@
 
 ###  参保人检验
 - **接口地址：** /ltcins-intact-client-api/client/loadIns
-- **请求方式：** POST111
+- **请求方式：** POST
 
 #### 请求参数
   
